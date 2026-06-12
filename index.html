@@ -116,9 +116,25 @@
   .footer-bottom p{font-size:.8rem;color:rgba(255,255,255,.3);}
   .footer-bottom span{color:var(--red);}
 
+  /* ── CALCULATOR PROMO ── */
+  .calc-promo-section{background:#fff;padding:80px 0;border-top:3px solid rgba(232,25,44,.07);}
+  .calc-promo-wrap{display:flex;gap:64px;align-items:center;}
+  .calc-promo-text{flex:1 1 0;min-width:0;}
+  .calc-promo-desc{font-size:.975rem;color:var(--gray);line-height:1.75;margin:20px 0 32px;max-width:460px;}
+  .calc-promo-card{flex:0 0 390px;background:var(--charcoal);border-radius:12px;padding:36px 40px;position:relative;overflow:hidden;}
+  .calc-promo-card::after{content:'';position:absolute;top:-80px;right:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(232,25,44,.18) 0%,transparent 70%);pointer-events:none;}
+  .calc-icon-big{font-size:2.6rem;display:block;margin-bottom:16px;}
+  .calc-promo-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:800;color:white;text-transform:uppercase;letter-spacing:.5px;margin-bottom:18px;}
+  .calc-features{list-style:none;margin-bottom:28px;}
+  .calc-features li{color:rgba(255,255,255,.55);font-size:.86rem;line-height:1.5;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px;}
+  .calc-features li:last-child{border-bottom:none;}
+  .calc-features li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;}
+  .btn-calc-cta{display:inline-block;background:var(--red);color:white;text-decoration:none;padding:14px 28px;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:4px;transition:background .2s,transform .2s;box-shadow:0 4px 20px rgba(232,25,44,.35);}
+  .btn-calc-cta:hover{background:var(--red-dark);transform:translateY(-2px);}
+
   @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-  @media(max-width:768px){nav{padding:0 20px;}.nav-links{display:none;}.lang-btn{display:none;}.hamburger{display:flex;}.hero-content{padding:60px 20px;}.hero-stats{flex-wrap:wrap;width:100%;}.stat{flex:1 1 45%;border-right:none;border-bottom:1px solid rgba(255,255,255,.1);}.container{padding:0 20px;}section{padding:60px 0;}.footer-grid{grid-template-columns:1fr;gap:32px;}.products-header{flex-direction:column;align-items:flex-start;}.contact-strip .container{flex-direction:column;align-items:flex-start;}}
-  @media(max-width:480px){.hero h1{font-size:2.6rem;}.products-grid{grid-template-columns:1fr;}.whyus-grid{grid-template-columns:1fr;}}
+  @media(max-width:768px){nav{padding:0 20px;}.nav-links{display:none;}.lang-btn{display:none;}.hamburger{display:flex;}.hero-content{padding:60px 20px;}.hero-stats{flex-wrap:wrap;width:100%;}.stat{flex:1 1 45%;border-right:none;border-bottom:1px solid rgba(255,255,255,.1);}.container{padding:0 20px;}section{padding:60px 0;}.footer-grid{grid-template-columns:1fr;gap:32px;}.products-header{flex-direction:column;align-items:flex-start;}.contact-strip .container{flex-direction:column;align-items:flex-start;}.calc-promo-wrap{flex-direction:column;gap:36px;}.calc-promo-card{flex:none;width:100%;}}
+  @media(max-width:480px){.hero h1{font-size:2.6rem;}.products-grid{grid-template-columns:1fr;}.whyus-grid{grid-template-columns:1fr;}.calc-promo-card{padding:28px 24px;}}
 </style>
 </head>
 <body>
@@ -128,6 +144,7 @@
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="./index.html" class="active" data-hi="होम" data-en="Home">होम</a></li>
+      <li><a href="./aac-calculator.html" data-hi="AAC Calculator" data-en="AAC Calculator">AAC Calculator</a></li>
       <li><a href="./contact.html" data-hi="संपर्क करें" data-en="Contact Us">संपर्क करें</a></li>
     </ul>
     <button class="lang-btn" onclick="toggleLang()" id="langBtn">EN</button>
@@ -136,6 +153,7 @@
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="./index.html" onclick="toggleMenu()" data-hi="होम" data-en="Home">होम</a>
+  <a href="./aac-calculator.html" onclick="toggleMenu()" data-hi="AAC Calculator" data-en="AAC Calculator">AAC Calculator</a>
   <a href="./contact.html" onclick="toggleMenu()" data-hi="संपर्क करें" data-en="Contact Us">संपर्क करें</a>
   <button class="mobile-lang-btn" onclick="toggleLang();toggleMenu();" id="mobileLangBtn">🌐 Switch to English</button>
 </div>
@@ -266,6 +284,37 @@
   </div>
 </section>
 
+<!-- CALCULATOR PROMO -->
+<section class="calc-promo-section">
+  <div class="container">
+    <div class="calc-promo-wrap">
+
+      <!-- Left: copy -->
+      <div class="calc-promo-text">
+        <div class="section-label" data-hi="निःशुल्क Tool" data-en="Free Tool">निःशुल्क Tool</div>
+        <h2 class="section-title" data-hi="कितने Blocks <span>चाहिए?</span>" data-en="How Many Blocks <span>Do You Need?</span>">कितने Blocks <span>चाहिए?</span></h2>
+        <p class="calc-promo-desc" data-hi="Wall की height, length और thickness डालें — हमारा free calculator instantly बताता है कितने AAC Blocks लगेंगे। Red Brick से comparison भी।" data-en="Enter your wall's height, length and thickness — our free calculator instantly tells you how many AAC Blocks you need. Red Brick comparison included.">Wall की height, length और thickness डालें — हमारा free calculator instantly बताता है कितने AAC Blocks लगेंगे। Red Brick से comparison भी।</p>
+        <a href="./aac-calculator.html" class="btn-primary" data-hi="Calculator खोलें →" data-en="Open Calculator →">Calculator खोलें →</a>
+      </div>
+
+      <!-- Right: feature card -->
+      <div class="calc-promo-card">
+        <span class="calc-icon-big">🧮</span>
+        <h3 data-hi="AAC Block Calculator" data-en="AAC Block Calculator">AAC Block Calculator</h3>
+        <ul class="calc-features">
+          <li data-hi="दीवार के blocks तुरंत calculate करें" data-en="Instantly calculate blocks for any wall size">दीवार के blocks तुरंत calculate करें</li>
+          <li data-hi="AAC vs Red Brick — side-by-side comparison" data-en="AAC vs Red Brick — side-by-side comparison">AAC vs Red Brick — side-by-side comparison</li>
+          <li data-hi="3 thickness options — 100, 150, 200mm" data-en="3 thickness options — 100, 150, 200mm">3 thickness options — 100, 150, 200mm</li>
+          <li data-hi="Wastage factor automatically included" data-en="Wastage factor automatically included">Wastage factor automatically included</li>
+          <li data-hi="Hindi + English | बिल्कुल Free" data-en="Hindi + English | Completely Free">Hindi + English | बिल्कुल Free</li>
+        </ul>
+        <a href="./aac-calculator.html" class="btn-calc-cta" data-hi="अभी Use करें — Free है" data-en="Use Now — It's Free">अभी Use करें — Free है</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- WHY US -->
 <section class="whyus-section">
   <div class="container">
@@ -305,6 +354,7 @@
         <h4 data-hi="Quick Links" data-en="Quick Links">Quick Links</h4>
         <ul>
           <li><a href="./index.html" data-hi="होम" data-en="Home">होम</a></li>
+          <li><a href="./aac-calculator.html" data-hi="AAC Calculator" data-en="AAC Calculator">AAC Calculator</a></li>
           <li><a href="./contact.html" data-hi="संपर्क करें" data-en="Contact Us">संपर्क करें</a></li>
         </ul>
       </div>
@@ -363,7 +413,7 @@
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.style.opacity=1; e.target.style.transform='translateY(0)'; } });
   }, { threshold: .1 });
-  document.querySelectorAll('.product-card,.whyus-card').forEach(el => {
+  document.querySelectorAll('.product-card,.whyus-card,.calc-promo-card').forEach(el => {
     el.style.opacity='0'; el.style.transform='translateY(20px)';
     el.style.transition='opacity .5s ease,transform .5s ease,border-color .25s,box-shadow .25s';
     observer.observe(el);
